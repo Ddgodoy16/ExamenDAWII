@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Agenda.View.Tabbed.Asignatura">
+    
+    <ContentPage.Content>
+
+
+
+
+        <StackLayout BackgroundColor="White">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Label Text="Registrar Asignaturas"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" 
+                   Grid.Row="0"
+                   Grid.Column="0"
+                       Grid.ColumnSpan="3"
+                   TextColor="Black"
+                   FontAttributes="Bold"
+                   FontSize="30"/>
+                
+                <Label Text="Registrar una Asignaturas"
+ VerticalOptions="CenterAndExpand" 
+ HorizontalOptions="Start" 
+    Grid.Row="3"
+    Grid.Column="0"
+        Grid.ColumnSpan="3"
+    TextColor="Black"
+    FontAttributes="Bold"
+    FontSize="25"
+    Margin="20,5,15,0"/>
+
+
+                <Entry Grid.Row="4"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="3"
+                   Margin="20,0,20,0"
+                   BackgroundColor="LightGray"
+                   TextColor="Black"
+                   Text="{Binding Descripcion}"
+                   Placeholder="Ingrese una asignatura.."/>
+
+
+
+
+
+
+
+                <Button Grid.Row="6"
+         Grid.Column="0"
+         Grid.ColumnSpan="3"
+         Margin="20,0,20,0"
+         Padding="5"
+         Text="Guardar"
+         Command="{Binding BtnGuardar}"
+         CornerRadius="5"
+         BackgroundColor="Black"
+         FontSize="Subtitle"/>
+                <Button Grid.Row="7"
+         Grid.Column="0"
+         Grid.ColumnSpan="3"
+         Margin="20,0,20,0"
+         Padding="5"
+         Text="Eliminar"
+         Command="{Binding BtnEliminar}"
+         CornerRadius="5"
+         BackgroundColor="Red"
+         FontSize="Subtitle"/>
+            </Grid>
+            <Button VerticalOptions="EndAndExpand"
+                    Text="Regresar"
+                    TextColor="Gray"
+                    BackgroundColor="LightGray"
+                    FontSize="Subtitle"
+                    Command="{Binding PageInicio}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

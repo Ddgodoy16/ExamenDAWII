@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Agenda.View.Tabbed.FormTareas">
+
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="white">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Text="Registro de Tareas"
+                  VerticalOptions="CenterAndExpand" 
+                   HorizontalOptions="CenterAndExpand" 
+                   Grid.Row="1"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="3"
+                   TextColor="Black"
+                   FontAttributes="Bold"
+                   FontSize="35"/>
+
+
+                <Label Text="Registrar una Tarea"
+   VerticalOptions="CenterAndExpand" 
+    HorizontalOptions="Start" 
+                       Margin="20,5,15,0"
+    Grid.Row="3"
+    Grid.Column="0"
+    Grid.ColumnSpan="3"
+    TextColor="Black"
+    FontAttributes="Bold"
+    FontSize="Title"/>
+                <Entry  Grid.Row="4"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="3"
+                        Margin="20,0,20,0"
+                        
+                    BackgroundColor="LightGray"
+                    TextColor="Black"
+                    Text="{Binding Fecha}"
+                    Placeholder="Ingrese una Entrega"/>
+
+               
+
+                <Button Grid.Row="6"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="3"
+                        Margin="20,0,20,0"
+                        Padding="5"
+                        Text="Guardar"
+                        Command="{Binding BtnGuardar}"
+                        CornerRadius="5"
+                        BackgroundColor="Black"
+                        FontSize="Subtitle"/>
+                <Button Grid.Row="7"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="3"
+                        Margin="20,0,20,0"
+                        Padding="5"
+                        Text="Eliminar"
+                        Command="{Binding BtnEliminar}"
+                        CornerRadius="5"
+                        BackgroundColor="Red"
+                        FontSize="Subtitle"/>
+            </Grid>
+
+            <Button VerticalOptions="EndAndExpand"
+                    Text="Regresar"
+                    TextColor="Black"
+                    BackgroundColor="Gray"
+                    FontSize="Subtitle"
+                    Command="{Binding PageInicio}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

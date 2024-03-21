@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Agenda.View.Tabbed.FormHorario">
+
+
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="white">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Text="Registro de Horario"
+                  VerticalOptions="CenterAndExpand" 
+                   HorizontalOptions="CenterAndExpand" 
+                   Grid.Row="1"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="3"
+                   TextColor="Black"
+                   FontAttributes="Bold"
+                   FontSize="Title"/>
+
+                <Label Text="Agregar un Horario"
+  VerticalOptions="CenterAndExpand" 
+   HorizontalOptions="Start" 
+                       Margin="20,5,3,0"
+   Grid.Row="3"
+   Grid.Column="0"
+   Grid.ColumnSpan="3"
+   TextColor="Black"
+   FontAttributes="Bold"
+   FontSize="Title"/>
+
+                <Entry  Grid.Row="4"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="3"
+                        Margin="20,0,20,0"
+                        
+                    BackgroundColor="LightGray"
+                    TextColor="Black"
+                    Text="{Binding Dia}"
+                    Placeholder="Ingrese el Horario"/>
+
+
+                <Button Grid.Row="6"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="3"
+                        Margin="20,0,20,0"
+                        Padding="5"
+                        Text="Guardar"
+                        Command="{Binding BtnGuardar}"
+                        CornerRadius="5"
+                        BackgroundColor="Black"
+                        FontSize="Subtitle"/>
+                <Button Grid.Row="7"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="3"
+                        Margin="20,0,20,0"
+                        Padding="5"
+                        Text="Eliminar"
+                        Command="{Binding BtnEliminar}"
+                        CornerRadius="5"
+                        BackgroundColor="Red"
+                        FontSize="Subtitle"/>
+            </Grid>
+
+            <Button VerticalOptions="EndAndExpand"
+                    Text="Regresar"
+                    TextColor="Black"
+                    BackgroundColor="Gray"
+                    FontSize="Subtitle"
+                    Command="{Binding PageListHorarios}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

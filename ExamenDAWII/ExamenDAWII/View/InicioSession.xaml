@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            x:Class="Agenda.View.Tabbed.InicioSession">
+
+    <ContentPage.Content>
+        
+        <StackLayout BackgroundColor="White" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <Label Margin="25" Text="AGENDA" TextColor="Black" FontSize="40" FontAttributes="Bold" HorizontalOptions="Center" />
+            <Image Source="Ceutec.png" WidthRequest="140" HeightRequest="140" HorizontalOptions="Center" VerticalOptions="Center" />
+
+
+
+            <Frame BackgroundColor="#042558" CornerRadius="20"  >
+                
+                <StackLayout>
+                   
+                    <Label HorizontalTextAlignment="Center" FontSize="40" Text="LogIn" TextColor="White" Margin="5" />
+                    <Label HorizontalTextAlignment="Start" FontSize="Subtitle" Text="Ingrese su Correo" TextColor="White" Margin="10,30,0,5" />
+                    <Entry x:Name="correo" 
+                           HorizontalTextAlignment="Start" 
+                           Placeholder=" " PlaceholderColor="Black" 
+                           Keyboard="Default" 
+                           TextColor="Black" 
+                           BackgroundColor="White" 
+                           Margin="10,2" />
+                    <Label HorizontalTextAlignment="Start" FontSize="Subtitle" Text="Ingrese su Contraseña" TextColor="White" Margin="10,30,0,5" />
+                    <Entry 
+                           
+                           IsPassword="True" TextColor="Black" 
+                           BackgroundColor="White" 
+                           Margin="10,2" />
+                    <StackLayout Orientation="Horizontal">
+                        <Label HorizontalOptions="Start" Text="Olvido su Contraseña" TextColor="White" Margin="15" Padding="0" TextDecorations="Underline" />
+
+                        <Label HorizontalOptions="End" Text="Registrarse" TextColor="White" Margin="15" Padding="0" TextDecorations="Underline" />
+                    </StackLayout>
+                    <Button HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Text="Iniciar Sesion" TextColor="Black" FontSize="Title" BackgroundColor="#C4141B" CornerRadius="10" Clicked="IniciarSesion" Margin="10,30,0,25" />
+                   
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

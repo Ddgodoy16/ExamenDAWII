@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Agenda.View.Tabbed.Tareas"
+             Title="Agenda Universitaria">
+
+ 
+
+
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="White">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="Tareas" 
+                       TextColor="Black"
+                       FontAttributes="Bold" 
+                       FontSize="40" 
+                       HorizontalTextAlignment="Center" 
+                       Grid.Row="0" 
+                       Grid.Column="1"
+                       Grid.ColumnSpan="6"  
+                       Margin="10"></Label>
+
+                <CollectionView Grid.Row="1"
+                                Grid.Column="1"
+                                Grid.ColumnSpan="6"
+                                Grid.RowSpan="15"
+                                ItemsSource="{Binding Lista_Tarea}"
+                                Margin="15"
+                                SelectionMode="Single"
+                                SelectedItem="{Binding Valor_Seleccionado}"
+                                SelectionChangedCommand="{Binding DetalleTarea}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout Padding="1">
+                                <Frame Padding="10"
+                                       
+                                       CornerRadius="5"
+                                       BorderColor="#FFC312">
+                                    <Grid RowDefinitions="Auto,Auto,Auto">
+                                        <Label Grid.Row="0" 
+                                       Text="{Binding asignatura}" 
+                                       TextColor="Black"></Label>
+                                        <Label Grid.Row="1" 
+                                       Text="{Binding fecha}" 
+                                       TextColor="Black"></Label>
+                                        <Label Grid.Row="2" 
+                                       Text="{Binding nombre}" 
+                                       TextColor="Black"></Label>
+                                    </Grid>
+                                </Frame>
+                            </StackLayout>
+
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Grid>
+            <Button VerticalOptions="CenterAndExpand"
+                    Text="Agregar Tarea"
+                    TextColor="Black"
+                    BackgroundColor="LightGray"
+                    FontSize="Subtitle"
+                    Command="{Binding PageFormTareas}"
+                    IsVisible="true"/>
+
+            <Button VerticalOptions="EndAndExpand"
+                    Text="Regresar"
+                    TextColor="Black"
+                    BackgroundColor="Gray"
+                    FontSize="Subtitle"
+                    Command="{Binding PageInicio}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Agenda.View.Tabbed.Inicio">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="Bienvenido"
+                   TextColor="White"
+                   Grid.Row="1"
+                   FontAttributes="Bold"
+                   FontSize="Title"
+                   VerticalOptions="CenterAndExpand" 
+                   HorizontalOptions="CenterAndExpand" />
+
+                <Label Text="@Usuario"
+    TextColor="White"
+    Grid.Row="3"
+    FontAttributes="Bold"
+    FontSize="Title"
+    VerticalOptions="CenterAndExpand" 
+    HorizontalOptions="CenterAndExpand" />
+                <Label Text="La mejor forma de predecir el futuro es crearlo. 
+                   Abraham Lincoln."
+                   FontSize="Title"
+                   TextColor="White"
+                   Grid.Row="4"
+                   Grid.RowSpan="4"
+                   Padding="5"
+                   Margin="20"
+                   HorizontalOptions="Center"/>
+
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

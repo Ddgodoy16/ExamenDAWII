@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            x:Class="Agenda.View.Tabbed.HorarioClases"
+             Title="Agenda Estudiantil">
+
+  
+
+    <ContentPage.Content>
+        <StackLayout Background="white">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="Horarios" 
+                       TextColor="Black"
+                       FontAttributes="Bold" 
+                       FontSize="40" 
+                       HorizontalTextAlignment="Center" 
+                       Grid.Row="1" 
+                       Grid.Column="1"
+                       Grid.ColumnSpan="6"  
+                       Margin="10"></Label>
+
+                <CollectionView Grid.Row="3"
+                                Grid.Column="1"
+                                Grid.ColumnSpan="6"
+                                Grid.RowSpan="15"
+                                ItemsSource="{Binding Lista_Horario}"
+                                Margin="15"
+                                SelectionMode="Single"
+                                SelectedItem="{Binding Valor_Seleccionado}"
+                                SelectionChangedCommand="{Binding DetalleHorario}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout Padding="1">
+                                <Frame Padding="10"
+                                       CornerRadius="5"
+                                       BorderColor="#FFC312">
+                                    <Grid RowDefinitions="Auto,Auto,Auto">
+                                        <Label Grid.Row="0" 
+                                       Text="{Binding asignatura}" 
+                                       TextColor="Black"></Label>
+                                        <Label Grid.Row="1" 
+                                       Text="{Binding dia}" 
+                                       TextColor="Black"></Label>
+                                        <Label Grid.Row="2" 
+                                       Text="{Binding hora}" 
+                                       TextColor="Black"></Label>
+                                    </Grid>
+                                </Frame>
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Grid>
+            <Button VerticalOptions="CenterAndExpand"
+                    Text="Agregar Horario"
+                    TextColor="Black"
+                    BackgroundColor="LightGray"
+                    FontSize="Subtitle"
+                    Command="{Binding PageFormHorario}"
+                    IsVisible="true"/>
+
+            <Button VerticalOptions="EndAndExpand"
+                    Text="Regresar"
+                    TextColor="Black"
+                    BackgroundColor="Gray"
+                    FontSize="Subtitle"
+                    Command="{Binding PageMain}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

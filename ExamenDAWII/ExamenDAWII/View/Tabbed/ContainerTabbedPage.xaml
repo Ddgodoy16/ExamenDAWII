@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:locals="clr-namespace:Agenda.View.Tabbed" 
+            x:Class="Agenda.View.Tabbed.ContainerTabbedPage"
+            Title="Tabbed Video"
+            BarTextColor="White" BarBackgroundColor="#157545"   SelectedTabColor="Black" UnselectedTabColor="White"
+            >
+
+
+    <locals:Inicio Title="Inicio"/>
+    <locals:HorarioClases Title="Horario Clases"/>
+    <locals:InicioSession Title="Calendario" />
+    <locals:HorarioClases Title="FormTareas"/>
+    <locals:InicioSession Title="Tareas" />
+    <locals:HorarioClases Title="Agendar_Eventos"/>
+    <locals:Asignatura Title="List"/>
+    
+
+</TabbedPage>

@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+    <ProduceReferenceAssemblyInOutDir>true</ProduceReferenceAssemblyInOutDir>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2196" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
+    <PackageReference Include="XamForms.Controls.Calendar" Version="1.1.1" />
+    <PackageReference Include="XCalendar.Core" Version="4.6.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="View\Tabbed\Asignatura.xaml.cs">
+      <DependentUpon>Asignatura.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="View\Tabbed\List_Asignaturas.xaml.cs">
+      <DependentUpon>List_Asignaturas.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+</Project>
