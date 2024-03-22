@@ -14,7 +14,7 @@ namespace Agenda.View.Tabbed
 	{
 		public Asignatura ()
 		{
-			InitializeComponent ();
+            InitializeComponent();
 		}
         protected override bool OnBackButtonPressed()
         {

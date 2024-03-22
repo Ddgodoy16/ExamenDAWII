@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace Agenda.View.Tabbed
+namespace Agenda.View
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class InicioSession : ContentPage
@@ -19,9 +19,6 @@ namespace Agenda.View.Tabbed
             
             
         }
-        private async void IniciarSesion (object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new MyMasterDetailPage());
-        }
+     
     }
 }

@@ -14,7 +14,7 @@ namespace Agenda
             InitializeComponent();
 
 
-            MainPage = new NavigationPage(new InicioSession());
+            MainPage = new NavigationPage(new MyMasterDetailPage());
 
         }
 

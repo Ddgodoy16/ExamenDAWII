@@ -1,7 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Agenda.View.Tabbed.Asignatura">
+             x:Class="Agenda.View.Tabbed.Asignatura"
+             xmlns:local="clr-namespace:Agenda.Models">
+
+
+    <ContentPage.BindingContext>
+        <local:Asignatura></local:Asignatura>
+    </ContentPage.BindingContext>
     
     <ContentPage.Content>
 
@@ -49,7 +55,7 @@
                    Margin="20,0,20,0"
                    BackgroundColor="LightGray"
                    TextColor="Black"
-                   Text="{Binding Descripcion}"
+                  Text="{Binding nombre}"
                    Placeholder="Ingrese una asignatura.."/>
 
 
@@ -64,7 +70,7 @@
          Margin="20,0,20,0"
          Padding="5"
          Text="Guardar"
-         Command="{Binding BtnGuardar}"
+         Command="{Binding CrearAsignatura}"
          CornerRadius="5"
          BackgroundColor="Black"
          FontSize="Subtitle"/>
