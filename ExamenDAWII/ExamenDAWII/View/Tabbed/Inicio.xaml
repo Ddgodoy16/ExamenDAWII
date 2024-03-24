@@ -24,7 +24,11 @@
                    VerticalOptions="CenterAndExpand" 
                    HorizontalOptions="CenterAndExpand" />
 
-                <Label Text="@Usuario"
+
+
+                
+                <Label 
+                       Text="{Binding auth}"
     TextColor="White"
     Grid.Row="3"
     FontAttributes="Bold"

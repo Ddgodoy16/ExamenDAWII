@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace htt.Models
+namespace Agenda.Models
 {
     public class CrearUsuarioBody
     {
         public string correo { get; set; }
-        public string nombre { get; set; }
-        public string pass { get; set; }
+       
+        public string contrasena { get; set; }
     }
 }

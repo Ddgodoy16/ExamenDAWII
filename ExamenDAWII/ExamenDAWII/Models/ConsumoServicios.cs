@@ -1,5 +1,4 @@
 ﻿
-using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Net.Cache;
@@ -46,8 +45,8 @@ namespace Agenda.Models
             try
             {
                 HttpClient client = new HttpClient();
-                string jsonData = JsonConvert.SerializeObject(obj);
-                var formData = JsonConvert.DeserializeObject<Dictionary <string, string>>(jsonData);
+                string jsonData = Newtonsoft.Json.JsonConvert.SerializeObject(obj);
+                var formData = Newtonsoft.Json.JsonConvert.DeserializeObject<Dictionary <string, string>>(jsonData);
                 var content = new FormUrlEncodedContent(formData);
                 var response = await client.PostAsync(url, content);
 

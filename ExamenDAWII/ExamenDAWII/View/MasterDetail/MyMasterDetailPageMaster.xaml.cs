@@ -40,8 +40,8 @@ namespace Agenda.View.MasterDetail
                  new MyMasterDetailPageMenuItem { Id = 1, Title = "Horario Clases", TargetType = typeof(HorarioClases), },
                  new MyMasterDetailPageMenuItem { Id = 2, Title = "Agregar Horario", TargetType = typeof(FormHorario), },
                  new MyMasterDetailPageMenuItem { Id = 3, Title = "Calendario", TargetType = typeof(Calendario), },
-                 new MyMasterDetailPageMenuItem { Id = 4, Title = "Agregar Tarea", TargetType = typeof(FormTareas), },
-                 new MyMasterDetailPageMenuItem { Id = 5, Title = "Tareas", TargetType = typeof(Tareas), },
+                 new MyMasterDetailPageMenuItem { Id = 4, Title = "Agregar Agenda", TargetType = typeof(FormAgenda), },
+                 new MyMasterDetailPageMenuItem { Id = 5, Title = "Agenda", TargetType = typeof(ListAgenda), },
                  new MyMasterDetailPageMenuItem { Id = 6, Title = "Agregar Asignaturas", TargetType = typeof(Asignatura), },
                  new MyMasterDetailPageMenuItem { Id = 7, Title = "Asignaturas", TargetType = typeof(List_Asignaturas), },
                  });

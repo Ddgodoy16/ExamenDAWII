@@ -2,12 +2,14 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:local="clr-namespace:Agenda.ViewsModel"
-             x:Class="Agenda.View.Tabbed.List_Asignaturas">
+             x:Class="Agenda.View.Tabbed.ListAgenda"
+             Title="Agenda Universitaria">
+
 
 
 
     <ContentPage.BindingContext>
-        <local:VMAsignatura></local:VMAsignatura>
+        <local:VMAgenda></local:VMAgenda>
     </ContentPage.BindingContext>
 
     <ContentPage.Content>
@@ -15,20 +17,26 @@
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
-                   
+
                     <RowDefinition Height="*" />
-                   
+
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <Label Text="ID" Grid.Column="0" Grid.Row="0" FontSize="30" TextColor="White" Margin="50,20,0,0"></Label>
-                <Label Text="Asignatura" Grid.Column="1" Grid.Row="0" FontSize="30" TextColor="White" Margin="0,20,0,0"></Label>
-
+                <Label Text="ID" Grid.Column="0" Grid.Row="0" FontSize="18" TextColor="White" Margin="30,20,0,0"></Label>
+                <Label Text="Tarea" Grid.Column="5" Grid.Row="0" Grid.ColumnSpan="2" FontSize="18" TextColor="White" Margin="10,20,0,2"></Label>
+                <Label Text="ID_Asignatura" Grid.Column="3" Grid.ColumnSpan="2" Grid.Row="0" FontSize="18" TextColor="White" Margin="0,20,0,0"></Label>
+                <Label Text="ID_Horario" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2" FontSize="18" TextColor="White" Margin="0,20,0,0"></Label>
             </Grid>
 
-            <CollectionView ItemsSource="{Binding listaAsignatura}" SelectionMode="None">
+            <CollectionView ItemsSource="{Binding listaAgenda}" SelectionMode="None">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <Grid HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
@@ -40,8 +48,11 @@
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
 
-                            <Label Text="{Binding id}" Grid.Column="0" FontSize="20" TextColor="White" Margin="50,20,0,0"></Label>
-                            <Label Text="{Binding nombre}" Grid.Column="1" FontSize="20" TextColor="White" Margin="0,20,0,0"></Label>
+                            <Label Text="{Binding id}" Grid.Column="0" FontSize="18" TextColor="White" Margin="30,20,0,0"></Label>
+                            <Label Text="{Binding id_horario}" Grid.Column="1" FontSize="18" TextColor="White" Margin="30,20,0,0"></Label>
+                            <Label Text="{Binding id_asignatura}" Grid.Column="2" FontSize="18" TextColor="White" Margin="0,20,0,0"></Label>
+                            <Label Text="{Binding tarea}" Grid.Column="3" FontSize="18" TextColor="White" Margin="0,20,0,0"></Label>
+
 
                         </Grid>
                     </DataTemplate>
@@ -58,7 +69,7 @@
 
     </ContentPage.Content>
 
-   
-       
-   
+
+
+
 </ContentPage>

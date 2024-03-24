@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace htt.Models
+namespace Agenda.Models
 {
     public class CrearUsuarioResponse
     {

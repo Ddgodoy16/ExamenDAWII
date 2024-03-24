@@ -10,10 +10,6 @@
     </ContentPage.BindingContext>
     
     <ContentPage.Content>
-
-
-
-
         <StackLayout BackgroundColor="White">
             <Grid>
                 <Grid.RowDefinitions>
@@ -37,7 +33,7 @@
                    FontAttributes="Bold"
                    FontSize="30"/>
                 
-                <Label Text="Registrar una Asignaturas"
+                <Label Text="Asignatura"
  VerticalOptions="CenterAndExpand" 
  HorizontalOptions="Start" 
     Grid.Row="3"
@@ -55,8 +51,7 @@
                    Margin="20,0,20,0"
                    BackgroundColor="LightGray"
                    TextColor="Black"
-                  Text="{Binding nombre}"
-                   Placeholder="Ingrese una asignatura.."/>
+                  Text="{Binding nombre}"/>
 
 
 
@@ -74,16 +69,7 @@
          CornerRadius="5"
          BackgroundColor="Black"
          FontSize="Subtitle"/>
-                <Button Grid.Row="7"
-         Grid.Column="0"
-         Grid.ColumnSpan="3"
-         Margin="20,0,20,0"
-         Padding="5"
-         Text="Eliminar"
-         Command="{Binding BtnEliminar}"
-         CornerRadius="5"
-         BackgroundColor="Red"
-         FontSize="Subtitle"/>
+               
             </Grid>
             <Button VerticalOptions="EndAndExpand"
                     Text="Regresar"

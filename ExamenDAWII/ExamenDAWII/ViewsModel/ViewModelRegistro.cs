@@ -1,14 +1,12 @@
 ﻿using Agenda.Models;
-using Agenda.View.Tabbed;
-using htt.Models;
-
+using Agenda.View;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
 using Xamarin.Forms;
 
-namespace htt.ViewModels
+namespace Agenda.ViewModel
 {
     public class ViewModelRegistro : INotifyPropertyChanged
     {
@@ -17,15 +15,15 @@ namespace htt.ViewModels
 
             crearUsuario = new Command(async () => {
 
-                string url = "https://apex.oracle.com/pls/apex/frlopez0801/api_artes_marciales/user";
+                string url = "https://apex.oracle.com/pls/apex/desarrollo_web/usuarios/api_usuarios";
 
                 ConsumoServicios servicio = new ConsumoServicios(url);
 
                 CrearUsuarioBody body = new CrearUsuarioBody() { 
                     
                     correo = correoprivado, 
-                    nombre = nombre, 
-                    pass = contrasena
+                  
+                    contrasena = contrasena
 
                 };
 
@@ -33,7 +31,8 @@ namespace htt.ViewModels
 
                 if (response.mensaje == "Creación Exitosa")
                 {
-                    var pagina = new Agenda.View.InicioSession();
+                    var pagina = new InicioSession();
+                    
                     Application.Current.MainPage.Navigation.PushAsync(pagina);
 
                 }
@@ -49,19 +48,6 @@ namespace htt.ViewModels
 
 
 
-        string nombre;
-
-        public string Nombre
-        {
-
-            get => nombre;
-            set
-            {
-                nombre = value;
-                var args = new PropertyChangedEventArgs(nameof(Nombre));
-                PropertyChanged?.Invoke(this, args);
-            }
-        }
 
 
         string correoprivado;
@@ -109,5 +95,9 @@ namespace htt.ViewModels
         public Command crearUsuario { get; }
 
         public event PropertyChangedEventHandler PropertyChanged;
+    }
+
+    internal class MainPage : Page
+    {
     }
 }

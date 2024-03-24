@@ -36,7 +36,7 @@
                    FontAttributes="Bold"
                    FontSize="Title"/>
 
-                <Label Text="Agregar un Horario"
+                <Label Text="Horario"
   VerticalOptions="CenterAndExpand" 
    HorizontalOptions="Start" 
                        Margin="20,5,3,0"
@@ -54,8 +54,7 @@
                         
                     BackgroundColor="LightGray"
                     TextColor="Black"
-                    Text="{Binding Dia}"
-                    Placeholder="Ingrese el Horario"/>
+                    Text="{Binding horario}"/>
 
 
                 <Button Grid.Row="6"
@@ -68,16 +67,7 @@
                         CornerRadius="5"
                         BackgroundColor="Black"
                         FontSize="Subtitle"/>
-                <Button Grid.Row="7"
-                        Grid.Column="0"
-                        Grid.ColumnSpan="3"
-                        Margin="20,0,20,0"
-                        Padding="5"
-                        Text="Eliminar"
-                        Command="{Binding BtnEliminar}"
-                        CornerRadius="5"
-                        BackgroundColor="Red"
-                        FontSize="Subtitle"/>
+               
             </Grid>
 
             <Button VerticalOptions="EndAndExpand"

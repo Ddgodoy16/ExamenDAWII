@@ -1,11 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-            x:Class="Agenda.View.InicioSession">
-    
+            x:Class="Agenda.View.InicioSession"
+             xmlns:local="clr-namespace:Agenda.ViewModel">
+
+    <ContentPage.BindingContext>
+        <local:Login></local:Login>
+    </ContentPage.BindingContext>
 
     <ContentPage.Content>
-        ala que 
+        
         <StackLayout BackgroundColor="White" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
             <Label Margin="25" Text="AGENDA" TextColor="Black" FontSize="40" FontAttributes="Bold" HorizontalOptions="Center" />
             <Image Source="Ceutec.png" WidthRequest="140" HeightRequest="140" HorizontalOptions="Center" VerticalOptions="Center" />
@@ -24,20 +28,26 @@
                            Keyboard="Default" 
                            TextColor="Black" 
                            BackgroundColor="White" 
-                           Margin="10,2" />
+                           Margin="10,2"
+                           Text="{Binding Correo}"/>
                     <Label HorizontalTextAlignment="Start" FontSize="Subtitle" Text="Ingrese su Contraseña" TextColor="White" Margin="10,30,0,5" />
                     <Entry 
-                           
+                           Text="{Binding Contrasena}"
                            IsPassword="True" TextColor="Black" 
                            BackgroundColor="White" 
                            Margin="10,2" />
                     <StackLayout Orientation="Horizontal">
                         <Label HorizontalOptions="Start" Text="Olvido su Contraseña" TextColor="White" Margin="15" Padding="0" TextDecorations="Underline" />
 
-                        <Label HorizontalOptions="End" Text="Registrarse" TextColor="White" Margin="15" Padding="0" TextDecorations="Underline" />
+                        <Label HorizontalOptions="End" Text="Registrarse"  TextColor="White" Margin="15" Padding="0" TextDecorations="Underline" >
+                            <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding crearUsuario}" />
+                            </Label.GestureRecognizers> 
+                            </Label>
                     </StackLayout>
-                    <Button HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Text="Iniciar Sesion" TextColor="Black" FontSize="Title" BackgroundColor="#C4141B" CornerRadius="10" Margin="10,30,0,25" />
+                    <Button Command="{Binding autenticacion}"  HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Text="Iniciar Sesion" TextColor="Black" FontSize="Title" BackgroundColor="#C4141B" CornerRadius="10"  Margin="10,30,0,25" />
                    
+                        <Label Text="{Binding Result}" ></Label>
                 </StackLayout>
             </Frame>
         </StackLayout>

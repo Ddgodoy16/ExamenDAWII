@@ -8,97 +8,81 @@ using System.ComponentModel;
 using System.Text;
 using Xamarin.Forms;
 
-namespace Agenda.View.Tabbed
-
-
-
+namespace Agenda.ViewModel
 {
-    public class ViewModelInicioSession : INotifyPropertyChanged
+    public class Login : INotifyPropertyChanged
     {
-        public ViewModelInicioSession()
+        public Login()
         {
-
             autenticacion = new Command(async () => {
+                string url = "https://apex.oracle.com/pls/apex/desarrollo_web/usuarios/auth";
 
-                string url = " ";
-
-                ConsumoServicios servicio = new ConsumoServicios(url);
-
-                AuthBody obj = new AuthBody()
+                try
                 {
+                    ConsumoServicios servicio = new ConsumoServicios(url);
 
-                    correo = correoprivado,
-                    pass = contrasena
-                };
+                    AuthBody obj = new AuthBody()
+                    {
+                        correo = Correo,
+                        contrasena = Contrasena
+                    };
 
-                AuthResponse response = await servicio.PostAsync<AuthResponse>(obj);
+                    AuthResponse response = await servicio.PostAsync<AuthResponse>(obj);
 
-                if (response.auth == "1")
-                {
-
-                    var pagina = new MyMasterDetailPage();
-                    Application.Current.MainPage.Navigation.PushAsync(pagina);
-
+                    if (response.auth == "1")
+                    {
+                        var pagina = new MyMasterDetailPage();
+                        await Application.Current.MainPage.Navigation.PushAsync(pagina);
+                    }
+                    else
+                    {
+                        await Application.Current.MainPage.DisplayAlert("Error", "Usuario y Contraseña no coinciden", "Ok");
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    Application.Current.MainPage.DisplayAlert("Error", "Usuario y Contraseña no coinciden", "Ok");
+                    // Manejo de excepciones
+                    Console.WriteLine($"Error: {ex.Message}");
+                    await Application.Current.MainPage.DisplayAlert("Error", "Ocurrió un error durante la autenticación", "Ok");
                 }
-
-
             });
-
 
             crearUsuario = new Command(() => {
-
-                var pagina = new MyMasterDetailPage();
+                var pagina = new ViewRegistro();
                 Application.Current.MainPage.Navigation.PushAsync(pagina);
-
             });
-
         }
 
-
-        string correoprivado;
-
+        private string _correo;
         public string Correo
         {
-
-            get => correoprivado;
+            get => _correo;
             set
             {
-                correoprivado = value;
-                var args = new PropertyChangedEventArgs(nameof(Correo));
-                PropertyChanged?.Invoke(this, args);
+                _correo = value;
+                OnPropertyChanged(nameof(Correo));
             }
         }
 
-        string contrasena;
-
+        private string _contrasena;
         public string Contrasena
         {
-
-            get => contrasena;
+            get => _contrasena;
             set
             {
-                contrasena = value;
-                var args = new PropertyChangedEventArgs(nameof(Contrasena));
-                PropertyChanged?.Invoke(this, args);
+                _contrasena = value;
+                OnPropertyChanged(nameof(Contrasena));
             }
         }
 
-
-        string result;
-
+        private string _result;
         public string Result
         {
-
-            get => result;
+            get => _result;
             set
             {
-                result = value;
-                var args = new PropertyChangedEventArgs(nameof(Result));
-                PropertyChanged?.Invoke(this, args);
+                _result = value;
+                OnPropertyChanged(nameof(Result));
             }
         }
 
@@ -107,5 +91,10 @@ namespace Agenda.View.Tabbed
         public Command crearUsuario { get; }
 
         public event PropertyChangedEventHandler PropertyChanged;
+
+        protected virtual void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
     }
 }

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Agenda.View.ViewRegistro"
+             xmlns:local="clr-namespace:Agenda.ViewModel"
+             >
+
+    <ContentPage.BindingContext>
+        <local:ViewModelRegistro></local:ViewModelRegistro>
+    </ContentPage.BindingContext>
+    
+    <StackLayout VerticalOptions="CenterAndExpand" Padding="20">
+        <Label Text="Registro de Usuarios"
+   VerticalOptions="CenterAndExpand" 
+    HorizontalOptions="CenterAndExpand" 
+    
+    TextColor="White"
+    FontAttributes="Bold"
+    FontSize="30"
+               Margin="2,0,0,120"/>
+
+
+        <Label TextColor="White"
+
+FontSize="20"  Margin="2,0,0,15" Text="Correo Electronico"/>
+        <Entry Text="{Binding Correo}" ></Entry>
+
+        <Label TextColor="White"
+
+FontSize="20"  Margin="2,20,0,15" Text="Contraseña:"/>
+        <Entry   Margin="2,0,0,15"  Text="{Binding Contrasena}" />
+
+        <Button   Margin="2,0,0,15" Command="{Binding crearUsuario}" Text="Crear Usuario" BackgroundColor="Green" TextColor="White" />
+
+        <Label Text="{Binding mensaje}" ></Label>
+
+
+    </StackLayout>
+</ContentPage>

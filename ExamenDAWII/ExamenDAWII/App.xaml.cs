@@ -9,12 +9,14 @@ namespace Agenda
 {
     public partial class App : Application
     {
+       
+
         public App()
         {
             InitializeComponent();
 
 
-            MainPage = new NavigationPage(new MyMasterDetailPage());
+            MainPage = new NavigationPage(new InicioSession());
 
         }
 
@@ -28,6 +30,13 @@ namespace Agenda
 
         protected override void OnResume()
         {
+        }
+
+        internal class xaml
+        {
+            public xaml()
+            {
+            }
         }
     }
 }

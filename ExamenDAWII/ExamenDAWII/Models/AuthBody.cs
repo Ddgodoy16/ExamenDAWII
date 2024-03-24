@@ -7,6 +7,6 @@ namespace Agenda.Models
     public class AuthBody
     {
         public string correo { get; set; }
-        public string pass { get; set; }
+        public string contrasena { get; set; }
     }
 }
