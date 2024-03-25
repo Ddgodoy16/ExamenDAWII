@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-             xmlns:local="clr-namespace:Agenda.ViewsModel"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Agenda.ViewsModels"
              x:Class="Agenda.View.Tabbed.ListAgenda"
              Title="Agenda Universitaria">
 
@@ -36,7 +36,7 @@
                 <Label Text="ID_Horario" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2" FontSize="18" TextColor="White" Margin="0,20,0,0"></Label>
             </Grid>
 
-            <CollectionView ItemsSource="{Binding listaAgenda}" SelectionMode="None">
+            <CollectionView ItemsSource="{Binding ListaAgenda}" SelectionMode="None">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <Grid HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">

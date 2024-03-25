@@ -1,7 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Agenda.ViewsModels"
              x:Class="Agenda.View.Tabbed.FormAgenda">
+
+    <ContentPage.BindingContext>
+        <local:VMAgenda></local:VMAgenda>
+    </ContentPage.BindingContext>
 
     <ContentPage.Content>
         <StackLayout BackgroundColor="white">
@@ -72,7 +77,7 @@ VerticalOptions="CenterAndExpand"
                      
                  BackgroundColor="LightGray"
                  TextColor="Black"
-                 Text="{Binding id asignatura}"
+                 Text="{Binding Id_Asignatura}"
                  />
                 <Label Text="Id Horario"
 VerticalOptions="CenterAndExpand" 
@@ -91,7 +96,7 @@ VerticalOptions="CenterAndExpand"
                      
                  BackgroundColor="LightGray"
                  TextColor="Black"
-                 Text="{Binding id horario}"
+                 Text="{Binding Id_Horario}"
                 />
 
 
@@ -102,7 +107,7 @@ VerticalOptions="CenterAndExpand"
                         Margin="20,0,20,0"
                         Padding="5"
                         Text="Guardar"
-                        Command="{Binding BtnGuardar}"
+                        Command="{Binding GuardarTarea}"
                         CornerRadius="5"
                         BackgroundColor="Black"
                         FontSize="Subtitle"/>

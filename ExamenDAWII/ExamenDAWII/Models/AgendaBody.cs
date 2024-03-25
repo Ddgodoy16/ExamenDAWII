@@ -4,10 +4,14 @@ using System.Text;
 
 namespace Agenda.Models
 {
-    class AgendaBody
+    public class AgendaBody
     {
+        public string mensaje { get; set; } 
+
         public int id_asignatura { get; set; }
         public string tarea { get; set; }
         public int id_horario { get; set; }
+
+        
     }
 }

@@ -21,7 +21,9 @@ namespace Agenda.Models
 
     public class AgendaRoot
     {
-        public List<AgendaItem> items { get; set; } // Corrección: Usa AgendaItem en lugar de Item
+        internal string mensaje;
+
+        public List<AgendaItem> items { get; set; } 
         public AgendaResponse first { get; set; }
     }
 }

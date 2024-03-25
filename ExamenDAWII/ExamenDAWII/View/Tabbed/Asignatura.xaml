@@ -2,11 +2,11 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Agenda.View.Tabbed.Asignatura"
-             xmlns:local="clr-namespace:Agenda.Models">
+             xmlns:local="clr-namespace:Agenda.ViewsModels">
 
 
     <ContentPage.BindingContext>
-        <local:Asignatura></local:Asignatura>
+        <local:VMAsignatura></local:VMAsignatura>
     </ContentPage.BindingContext>
     
     <ContentPage.Content>
@@ -51,7 +51,7 @@
                    Margin="20,0,20,0"
                    BackgroundColor="LightGray"
                    TextColor="Black"
-                  Text="{Binding nombre}"/>
+                  Text="{Binding NombreAsignatura}"/>
 
 
 
@@ -65,7 +65,7 @@
          Margin="20,0,20,0"
          Padding="5"
          Text="Guardar"
-         Command="{Binding CrearAsignatura}"
+         Command="{Binding GuardarAsignatura}"
          CornerRadius="5"
          BackgroundColor="Black"
          FontSize="Subtitle"/>

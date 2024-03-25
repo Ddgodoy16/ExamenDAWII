@@ -1,9 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Agenda.ViewsModels"
              x:Class="Agenda.View.Tabbed.FormHorario">
 
 
+    <ContentPage.BindingContext>
+        <local:VMHorario></local:VMHorario>
+    </ContentPage.BindingContext>
     <ContentPage.Content>
         <StackLayout BackgroundColor="white">
             <Grid>
@@ -54,7 +58,7 @@
                         
                     BackgroundColor="LightGray"
                     TextColor="Black"
-                    Text="{Binding horario}"/>
+                    Text="{Binding NuevoHorario}"/>
 
 
                 <Button Grid.Row="6"
@@ -63,7 +67,7 @@
                         Margin="20,0,20,0"
                         Padding="5"
                         Text="Guardar"
-                        Command="{Binding BtnGuardar}"
+                        Command="{Binding AgregarHorario}"
                         CornerRadius="5"
                         BackgroundColor="Black"
                         FontSize="Subtitle"/>

@@ -13,34 +13,44 @@ namespace Agenda.ViewModel
 
         public ViewModelRegistro() {
 
-            crearUsuario = new Command(async () => {
-
-                string url = "https://apex.oracle.com/pls/apex/desarrollo_web/usuarios/api_usuarios";
-
-                ConsumoServicios servicio = new ConsumoServicios(url);
-
-                CrearUsuarioBody body = new CrearUsuarioBody() { 
-                    
-                    correo = correoprivado, 
-                  
-                    contrasena = contrasena
-
-                };
-
-                CrearUsuarioResponse response = await servicio.PostAsync<CrearUsuarioResponse>(body);
-
-                if (response.mensaje == "Creación Exitosa")
+            crearUsuario = new Command(async () =>
+            {
+                if (string.IsNullOrEmpty(correoprivado) || string.IsNullOrEmpty(contrasena))
                 {
-                    var pagina = new InicioSession();
-                    
-                    Application.Current.MainPage.Navigation.PushAsync(pagina);
+                    Result = "Por favor, completa todos los campos.";
+                }
+                else
+                {
+
+                    string url = "https://apex.oracle.com/pls/apex/desarrollo_web/usuarios/api_usuarios";
+
+                    ConsumoServicios servicio = new ConsumoServicios(url);
+
+                    CrearUsuarioBody body = new CrearUsuarioBody()
+                    {
+
+                        correo = correoprivado,
+
+                        contrasena = contrasena
+
+                    };
+
+                    CrearUsuarioResponse response = await servicio.PostAsync<CrearUsuarioResponse>(body);
+
+                    if (response.mensaje == "Creación Exitosa")
+                    {
+                        var pagina = new InicioSession();
+
+                        Application.Current.MainPage.Navigation.PushAsync(pagina);
+
+                    }
+                    else
+                    {
+                        Result = response.mensaje;
+                    }
+
 
                 }
-                else {
-                    Result = response.mensaje;
-                }
-                
-
             });
 
         }

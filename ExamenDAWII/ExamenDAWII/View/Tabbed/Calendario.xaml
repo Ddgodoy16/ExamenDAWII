@@ -11,11 +11,14 @@
                    DisabledBorderColor="Black"  
                    ShowNumberOfWeek="false"  
                    StartDay="Monday"  
-                   TitleLabelTextColor="Purple"  
-                   TitleLeftArrowTextColor="Blue"  
+                   TitleLabelTextColor="White"  
+                   TitleLeftArrowTextColor="Blue" 
+                   TitleRightArrowTextColor="Blue"
                    SelectedDate="{Binding Date}"  
                    SpecialDates="{Binding Attendances}"  
-                   DateCommand="{Binding DateChosen}"/>
+                   DateCommand="{Binding DateChosen}"
+                             
+                               />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
